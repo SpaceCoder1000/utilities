@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* General Body Style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px; /* Collapsed width */
+    height: 100%;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    transition: width 0.3s ease; /* Smooth expansion */
+    z-index: 10;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 200px; /* Expanded width */
+}
+
+/* Image container: keeps the icon at the top and the image always centered */
+.sidebar .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    position: absolute;
+    top: 20px; /* Places the image at the top */
+}
+
+/* Image styling */
+.sidebar img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Text container: Hidden in collapsed state, appears when expanded */
+.sidebar .text-container {
+    display: none; /* Hidden in collapsed state */
+    white-space: nowrap; /* Prevents text from wrapping */
+    color: white;
+    margin-top: 60px; /* Places the text below the first image */
+    text-align: center; /* Centers the text horizontally */
+}
+
+.sidebar:hover .text-container {
+    display: block; /* Makes text visible when sidebar is expanded */
+}
+
+/* Second image container for the Whiteboard, below the Audio Player text */
+.sidebar .whiteboard-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the whiteboard icon horizontally */
+    position: absolute;
+    top: 120px; /* Positioning it below the audio text */
+}
+
+/* Sidebar link styling */
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Centered Content */
+.container {
+    text-align: center;
+    z-index: 1;
+}
+
+.container h1 {
+    margin: 20px 0;
+}
+
+.container iframe {
+    border: none;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.container img {
+    width: 550px;
+    height: 250px;
+    object-fit: cover; /* Ensures auto-cropping and scaling */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.container a {
+    color: white;
+    font-size: 20pt;
+    border-radius: 5px;
+    background-color: blue;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 200px;
+    margin-top: 10px;
+}
+
+</style>
+<title>Utilities by Space_Coder1000</title>
+</head>
+<body>
+<div class="sidebar">
+    <!-- Audio Player Section -->
+    <div class="image-container">
+        <img src="audio.png" alt="Speaker Icon">
+    </div>
+    <div class="text-container">
+        <a href="audio player.html" target="_blank">Audio Player</a>
+    </div>
+
+    <!-- Whiteboard Section (Drawpad) -->
+    <div class="whiteboard-container">
+        <img src="drawpad.png" alt="Drawpad Icon">
+    </div>
+    <div class="text-container" style="top: 160px;"> <!-- Adjust positioning for second text -->
+        <a href="drawpad.html" target="_blank">Whiteboard</a>
+    </div>
+</div>
+
+<!-- Main Content for Audio Player -->
+<div class="container">
+    <h1>Audio Player</h1>
+    <iframe src="audio player.html" width="550" height="250"></iframe>
+    <a href="audio player.html" target="_blank">Audio Player</a>
+</div>
+
+<!-- Main Content for Whiteboard (Drawpad) -->
+<div class="container">
+    <h1>Whiteboard</h1>
+    <img src="dptn.png" alt="Whiteboard Preview">
+    <a href="drawpad.html" target="_blank">Whiteboard</a>
+</div>
+
+</body>
+</html>
